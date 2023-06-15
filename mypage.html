@@ -1,0 +1,173 @@
+<!-- 메인 페이지 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>전시 정보 사이트</title>
+  <style>
+    /* CSS 스타일을 여기에 추가합니다. */
+    body {
+      text-align: center;
+    }
+
+    #main-image {
+      margin-top: 50px;
+    }
+
+    #search-box {
+      margin-top: 20px;
+    }
+
+    #login-button, #review-button {
+      margin-top: 20px;
+    }
+
+    button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+<div id="main-page">
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="home.html"><img src="exforu.png" alt="EX.FOR.U"></a></li>
+        <li><a href="exhibition.html"><span class="menu-item">전시 프로그램</span></a></li>
+        <li><a href="spaces.html"><span class="menu-item">전시 공간</span></a></li>
+        <li><a href="mypage.html" id="myPageButton"><span class="menu-item">마이페이지</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="main-image">
+    <img src="exforu.png" alt="EX.FOR.U">
+  </div>
+
+  <div id="search-box">
+    <input type="text" placeholder="검색">
+  </div>
+
+  <div id="login-button">
+    <button type="button">로그인</button>
+  </div>
+
+  <div id="review-button">
+    <button type="button">리뷰</button>
+  </div>
+</div>
+
+
+<!-- 첫번째 페이지 -->
+<div id="first-page" style="display: none;">
+  <h1>마이페이지-본인인증</h1>
+
+  <div id="password-input">
+    <input type="password" minlength="10" maxlength="12">
+    <div id="cursor"></div>
+  </div>
+
+  <div id="confirm-button">
+    <button type="button">확인</button>
+  </div>
+</div>
+
+
+<!-- 두번째 페이지 -->
+<div id="second-page" style="display: none;">
+  <h1>마이페이지-회원정보</h1>
+
+  <div id="menu-bar">
+    <button id="basic-info-button" type="button">기본정보</button>
+    <button id="update-info-button" type="button">회원정보 수정</button>
+    <button id="review-info-button" type="button">작성 리뷰 확인</button>
+    <button id="withdrawal-button" type="button">인터넷 회원 탈퇴</button>
+  </div>
+
+  <div id="detail-info">
+    <!-- 상세정보창 내용은 JavaScript로 동적으로 변경됩니다. -->
+  </div>
+</div>
+
+<script>
+  // 메인페이지 버튼 클릭 시 첫번째 페이지로 이동
+  const myPageButton = document.getElementById('myPageButton');
+  const mainPage = document.getElementById('main-page');
+  const firstPage = document.getElementById('first-page');
+
+  myPageButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    mainPage.style.display = 'none';
+    firstPage.style.display = 'block';
+  });
+
+  // 첫번째 페이지 확인 버튼 클릭 시 두번째 페이지로 이동
+  const confirmButton = document.querySelector('#confirm-button button');
+  const secondPage = document.getElementById('second-page');
+
+  confirmButton.addEventListener('click', () => {
+    const passwordInput = document.querySelector('#password-input input');
+    if (passwordInput.value.length >= 10) {
+      firstPage.style.display = 'none';
+      secondPage.style.display = 'block';
+    }
+  });
+
+  // 뒤로 가기 버튼 클릭 시 첫번째 페이지로 이동
+  const backButton = document.createElement('button');
+  backButton.innerText = '뒤로 가기';
+  backButton.addEventListener('click', () => {
+    secondPage.style.display = 'none';
+    firstPage.style.display = 'block';
+  });
+  document.body.insertBefore(backButton, secondPage);
+
+  // 상세정보창 내용 변경
+  const basicInfoButton = document.getElementById('basic-info-button');
+  const updateInfoButton = document.getElementById('update-info-button');
+  const reviewInfoButton = document.getElementById('review-info-button');
+  const withdrawalButton = document.getElementById('withdrawal-button');
+  const detailInfo = document.getElementById('detail-info');
+
+  basicInfoButton.addEventListener('click', () => {
+    detailInfo.innerHTML = `
+      <h2>이름: John Doe</h2>
+      <h2>아이디: johndoe123</h2>
+      <h2>비밀번호: ●●●●●●●●●●●</h2>
+      <h2>생년월일: 2003.07.16</h2>
+      <h2>핸드폰: 010-2***-***5</h2>
+      <h2>이메일: suh2468@naver.com</h2>
+    `;
+  });
+
+  updateInfoButton.addEventListener('click', () => {
+    detailInfo.innerHTML = `
+      <h2>회원정보 수정</h2>
+      <h2>이름: John Doe</h2>
+      <h2>아이디: johndoe123</h2>
+      <h2>비밀번호: ●●●●●●●●●●●</h2>
+      <h2>생년월일: 2003.07.16</h2>
+      <h2>핸드폰: 010-2***-***5</h2>
+      <h2>이메일: suh2468@naver.com</h2>
+      <!-- 회원정보 수정 내용을 입력하는 폼 등을 추가할 수 있습니다. -->
+    `;
+  });
+
+  reviewInfoButton.addEventListener('click', () => {
+    detailInfo.innerHTML = `
+      <h2>작성 리뷰 확인</h2>
+      <!-- 작성 리뷰 목록 등을 표시할 수 있습니다. -->
+    `;
+  });
+
+  withdrawalButton.addEventListener('click', () => {
+    detailInfo.innerHTML = `
+      <h2>인터넷 회원 탈퇴</h2>
+      <p>탈퇴하시겠습니까?</p>
+    `;
+  });
+</script>
+
+</body>
+</html>

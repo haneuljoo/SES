@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>전시 정보 사이트</title>
+  <style>
+    /* CSS 스타일을 여기에 추가합니다. */
+    .menu {
+      display: flex;
+      list-style: none;
+    }
+
+    .menu img {
+      height: 30px;
+    }
+
+    .search-page {
+      margin-top: 50px;
+    }
+
+    .search-options {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .search-options label {
+      font-weight: bold;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+
+    .checkbox input[type="checkbox"] {
+      display: none;
+    }
+
+    .checkbox label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .checkbox label::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      margin-right: 5px;
+      border: 1px solid #000;
+      border-radius: 3px;
+    }
+
+    .checkbox input[type="checkbox"]:checked + label::before {
+      background-color: #ff0000;
+    }
+
+    .exhibition-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .exhibition {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .exhibition img {
+      width: 200px;
+      height: 200px;
+    }
+
+    .pagination {
+      /* 페이지바 스타일 설정 */
+    }
+
+      /* 추가한 스타일 */
+    .menu li:not(:first-child) {
+      margin-left: 150px;
+    }
+
+    .menu li:first-child a {
+      margin-left: 10px;
+    }
+
+      /* 이전 스타일 유지 */
+  .menu-item {
+    font-size: 22px; /* 원하는 글꼴 크기로 수정하세요 */
+  }
+
+  .search-options label {
+    margin-right: 8px; /* 원하는 간격으로 수정하세요 */
+  }
+
+
+
+  
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .pagination a {
+      color: black;
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color .3s;
+      border: 1px solid #ddd;
+      margin: 0 4px;
+    }
+
+    .pagination a.active {
+      background-color: #4CAF50;
+      color: white;
+      border: 1px solid #4CAF50;
+    }
+
+    .pagination a:hover:not(.active) {background-color: #ddd;}
+  </style>
+</head>
+<body>
+  <div id="exhibition-list">
+
+  </style>
+ </style>
+</head>
+<body>
+<!-- 메인페이지 메뉴바 -->
+<header>
+  <nav>
+    <ul class="menu">
+      <li><a href="mainpage.html"><img src="exforu.png" alt="EX.FOR.U"></a></li>
+      <li><a href="exhibition.html"><span class="menu-item">전시 프로그램</span></a></li>
+      <li><a href="spaces.html"><span class="menu-item">전시 공간</span></a></li>
+      <li><a href="mypage.html"><span class="menu-item">마이페이지</span></a></li>
+      <li><a href="sitemap.html"><img src="sitemap.png" alt="전체메뉴 보기"></a></li>
+      <li><a href="search.html"><img src="search.png" alt="검색페이지 보기"></a></li>
+    </ul>
+  </nav>
+</header>
+  <!-- 전시 프로그램 검색 페이지 -->
+  <div class="search-page">
+      <div class="search-options">
+        <label for="location">강남구 동 검색</label>
+        <div class="checkbox">
+          <input type="checkbox" id="전체">
+          <label for="전체">전체</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="개포1동">
+          <label for="개포1동">개포1동</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="개포2동">
+          <label for="개포2동">개포2동</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="개포4동">
+          <label for="개포4동">개포4동</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="논현1동">
+          <label for="논현1동">논현1동</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="논현2동">
+          <label for="논현2동">논현2동</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="대치1동">
+          <label for="대치1동">대치1동</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="대치2동">
+          <label for="대치2동">대치2동</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="대치4동">
+          <label for="대치4동">대치4동</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="도곡1동">
+          <label for="도곡1동">도곡1동</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="도곡2동">
+          <label for="도곡2동">도곡2동</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="삼성1동">
+          <label for="삼성1동">삼성1동</label>
+        </div>
+<div class="search-page">
+      <div class="search-options">
+        <div class="checkbox">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="삼성2동">
+          <label for="삼성2동">삼성2동</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="세곡동">
+          <label for="세곡동">세곡동</label>
+        </div>
+        <div class="checkbox">
+          &nbsp;<input type="checkbox" id="수서동">
+          <label for="수서동">수서동</label>
+        </div>
+        <div class="checkbox">
+          &nbsp;<input type="checkbox" id="신사동">
+          <label for="신사동">신사동</label>
+        </div>
+        <div class="checkbox">
+          &nbsp;&nbsp;<input type="checkbox" id="압구정동">
+          <label for="압구정동">압구정동</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="역삼1동">
+          <label for="역삼1동">역삼1동</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="역삼2동">
+          <label for="역삼2동">역삼2동</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="일원1동">
+          <label for="일원1동">일원1동</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="일원본동">
+          <label for="일원본동">일원본동</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="청담동">
+          <label for="청담동">청담동</label>
+        </div>
+<div class="search-page">
+      <div class="search-options">
+        <br>
+        <label for="genre">장르 검색</label>
+        <div class="checkbox">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="전체">
+          <label for="전체">전체</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="회화">
+          <label for="회화">회화</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="디자인">
+          <label for="디자인">디자인</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="사진">
+          <label for="사진">사진</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="영상">
+          <label for="영상">영상</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="설치">
+          <label for="설치">설치</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="조각">
+          <label for="조각">조각</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="공예">
+          <label for="공예">공예</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="건축">
+          <label for="건축">건축</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="기타">
+          <label for="기타">기타</label>
+        </div>
+
+<div class="search-options">
+  <div class="search-input">
+    <input type="text" id="searchText" placeholder="검색어 입력">
+  </div>
+
+<script>
+function search() {
+  const searchText = document.getElementById('searchText').value;
+  const regex = /^[가-힣a-zA-Z0-9ㄱ-ㅎㅏ-ㅣ"'()[\]{}<>-_/|:;,.*]+$/;
+  
+  if (searchText.match(regex)) {
+    // 유효한 입력일 경우 검색 로직 실행
+    console.log("검색어:", searchText);
+    // 여기에 검색 로직을 작성하면 됩니다.
+  } else {
+    alert("유효한 텍스트를 입력해주세요.");
+  }
+}
+</script>
+
+
+<button type="submit">검색</button>
+    </form>
+      </div>
+
+<div style="margin: 0 auto; width: 50%;">
+    <div class="exhibition-list">
+      <div class="exhibition">
+        <div class="checkbox"></div>
+        <img src="exhibition1.png" alt="전시1">
+      </div>
+      <div class="exhibition">
+        <div class="checkbox"></div>
+        <img src="exhibition2.png" alt="전시2">
+      </div>
+      <div class="exhibition">
+        <div class="checkbox"></div>
+        <img src="exhibition3.png" alt="전시3">
+      </div>
+<div class="exhibition-list">
+      <div class="exhibition">
+        <div class="checkbox"></div>
+        <img src="exhibition4.png" alt="전시4">
+      </div>
+      <div class="exhibition">
+        <div class="checkbox"></div>
+        <img src="exhibition5.png" alt="전시5">
+      </div>
+      <div class="exhibition">
+        <div class="checkbox"></div>
+        <img src="exhibition6.png" alt="전시6">
+      </div>
+<div class="exhibition-list">
+      <div class="exhibition">
+        <div class="checkbox"></div>
+        <img src="exhibition7.png" alt="전시7">
+      </div>
+      <div class="exhibition">
+        <div class="checkbox"></div>
+        <img src="exhibition8.png" alt="전시8">
+      </div>
+      <div class="exhibition">
+        <div class="checkbox"></div>
+        <img src="exhibition9.png" alt="전시9">
+      </div>
+<div class="exhibition-list">
+      <div class="exhibition">
+        <div class="checkbox"></div>
+        <img src="exhibition1.png" alt="전시10">
+      </div>
+      <div class="exhibition">
+        <div class="checkbox"></div>
+        <img src="exhibition2.png" alt="전시11">
+      </div>
+      <div class="exhibition">
+        <div class="checkbox"></div>
+        <img src="exhibition3.png" alt="전시12">
+    </div>
+<div class="exhibition-list">
+
+</div>
+  <div class="pagination">
+  <div class="pagination">
+
+    <a href="#" class="active"><</a>
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#">7</a>
+    <a href="#">8</a>
+    <a href="#">9</a>
+    <a href="#">10</a>
+    <a href="#" class="active">></a>
+  </div>
+
+  <script>
+    // 페이징 로직
+  </script>
+</body>
+</html>
+    
+  </div>
+
+  <script>
+    // JavaScript 코드를 여기에 추가합니다.
+    const checkboxes = document.querySelectorAll('.checkbox');
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('click', () => {
+        checkbox.classList.toggle('selected');
+      });
+    });
+  </script>
+</body>
+</html>
+ 
